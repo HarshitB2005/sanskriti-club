@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  background-color: #07080a;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #07080a;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  
+  /* Xstar Grid & Dark Mesh Ambient Glow */
+  background-image: 
+    radial-gradient(circle at 75% 25%, rgba(45, 52, 68, 0.45) 0%, rgba(7, 8, 10, 0.95) 55%),
+    radial-gradient(circle at 10% 80%, rgba(204, 255, 0, 0.07) 0%, transparent 40%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 65px 65px, 65px 65px;
+}
+
+/* --- XSTAR 3D ISOMETRIC GEOMETRIC CUBES --- */
+
+/* Main Hero Right Dark Geometric Cluster */
+body::before {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: -6%;
+  width: 580px;
+  height: 580px;
+  background: 
+    linear-gradient(140deg, rgba(50, 56, 70, 0.9) 0%, rgba(22, 25, 33, 0.95) 45%, rgba(8, 9, 12, 1) 100%);
+  transform: rotate(-28deg) skew(14deg) rotate(8deg);
+  border-radius: 18px;
+  box-shadow: 
+    -45px 45px 90px rgba(0, 0, 0, 0.98),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.2),
+    inset -6px -6px 16px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+/* Secondary Floating 3D Block (Bottom Right) */
+body::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  right: 16%;
+  width: 310px;
+  height: 310px;
+  background: linear-gradient(135deg, rgba(42, 47, 59, 0.85) 0%, rgba(16, 18, 24, 0.95) 100%);
+  transform: rotate(-32deg) skew(12deg);
+  border-radius: 14px;
+  box-shadow: 
+    -25px 25px 60px rgba(0, 0, 0, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+  animation: floatXstarCube 7s ease-in-out infinite alternate;
+}
+
+@keyframes floatXstarCube {
+  0% {
+    transform: rotate(-32deg) skew(12deg) translateY(0px);
+  }
+  100% {
+    transform: rotate(-30deg) skew(10deg) translateY(-20px);
+  }
+}
+
+/* --- GLASS & ACCENT ELEMENTS --- */
+
+/* Glassmorphic Content Containers */
+.xstar-card {
+  background: rgba(15, 17, 23, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.xstar-card:hover {
+  border-color: rgba(204, 255, 0, 0.45);
+  box-shadow: 0 0 30px rgba(204, 255, 0, 0.15);
+}
+
+/* Video Aspect Ratio Container */
+.aspect-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.aspect-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1d24;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ccff00;
+}
