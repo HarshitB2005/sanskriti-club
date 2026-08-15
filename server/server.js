@@ -36,10 +36,19 @@ app.post('/api/upload', (req, res) => {
   });
 });
 
-// Mount Database API Routes
-app.use('/api/members', require('./routes/members'));
-app.use('/api/events', require('./routes/events'));
-app.use('/api/showcases', require('./routes/showcases'));
+// Safe Route Loader (Prevents crashes if route files are missing or casing differs)
+const loadRoute = (path, file) => {
+  try {
+    app.use(path, require(file));
+    console.log(`Successfully mounted route: ${path}`);
+  } catch (err) {
+    console.warn(`Could not load route ${path}: ${err.message}`);
+  }
+};
+
+loadRoute('/api/members', './routes/members');
+loadRoute('/api/events', './routes/events');
+loadRoute('/api/showcases', './routes/showcases');
 
 // Root Health Check Route
 app.get('/', (req, res) => {
