@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Dynamic API URL based on environment (Vercel vs Localhost)
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE = 'https://sanskriti-club.onrender.com';
 
 const Admin = () => {
     const [activeTab, setActiveTab] = useState('members');
