@@ -46,9 +46,10 @@ const loadRoute = (path, file) => {
   }
 };
 
-loadRoute('/api/members', './routes/members');
-loadRoute('/api/events', './routes/events');
-loadRoute('/api/showcases', './routes/showcases');
+// Updated Route Loaders matching your exact VS Code file names
+loadRoute('/api/members', './routes/memberRoutes');
+loadRoute('/api/events', './routes/eventRoutes');
+loadRoute('/api/showcases', './routes/portfolioRoutes');
 
 // Root Health Check Route
 app.get('/', (req, res) => {
